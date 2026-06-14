@@ -1,0 +1,250 @@
+.todo-page {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 56px 20px;
+  background:
+    linear-gradient(135deg, #f5f8fb 0%, #eef7f2 52%, #fbf2e8 100%);
+}
+
+.todo-panel {
+  width: min(100%, 620px);
+  background: #ffffff;
+  border: 1px solid rgba(139, 152, 170, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(34, 42, 54, 0.14);
+  padding: 32px;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0b7f71;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.todo-header h1 {
+  margin: 0;
+  color: #182230;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.todo-count {
+  min-width: 104px;
+  margin: 4px 0 0;
+  padding: 9px 12px;
+  border: 1px solid #c8d6dd;
+  border-radius: 8px;
+  color: #1f4f49;
+  background: #eef8f5;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.todo-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 104px;
+  gap: 12px;
+  align-items: start;
+}
+
+.todo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-field label {
+  color: #384252;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.todo-field input {
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  border: 1px solid #b9c3cf;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: #182230;
+  background: #ffffff;
+  font: inherit;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.todo-field input::placeholder {
+  color: #8a95a5;
+}
+
+.todo-field input:focus {
+  border-color: #0b7f71;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(11, 127, 113, 0.16);
+}
+
+.todo-field input[aria-invalid="true"] {
+  border-color: #c24132;
+  background: #fffafa;
+}
+
+.add-button,
+.delete-button {
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.add-button {
+  min-height: 46px;
+  margin-top: 28px;
+  color: #ffffff;
+  background: #0b7f71;
+  box-shadow: 0 8px 18px rgba(11, 127, 113, 0.22);
+}
+
+.add-button:hover {
+  background: #096c61;
+  transform: translateY(-1px);
+}
+
+.add-button:active,
+.delete-button:active {
+  transform: translateY(0);
+}
+
+.add-button:focus-visible,
+.delete-button:focus-visible {
+  outline: 3px solid rgba(11, 127, 113, 0.28);
+  outline-offset: 2px;
+}
+
+.error-message {
+  margin: 0;
+  color: #b42318;
+  font-size: 14px;
+}
+
+.empty-message {
+  margin: 28px 0 0;
+  padding: 22px 0;
+  border-top: 1px solid #e4e8ef;
+  color: #667085;
+  text-align: center;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  border-top: 1px solid #e4e8ef;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+  border-bottom: 1px solid #e4e8ef;
+  padding: 10px 0;
+}
+
+.todo-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  color: #182230;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.todo-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: #0b7f71;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.todo-check span {
+  overflow-wrap: anywhere;
+}
+
+.todo-check .done {
+  color: #778193;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  min-width: 82px;
+  min-height: 36px;
+  color: #a63a2b;
+  background: #fff0ed;
+}
+
+.delete-button:hover {
+  background: #ffe1dc;
+  box-shadow: 0 6px 14px rgba(166, 58, 43, 0.12);
+}
+
+@media (max-width: 520px) {
+  .todo-page {
+    padding: 28px 12px;
+  }
+
+  .todo-panel {
+    padding: 22px;
+  }
+
+  .todo-header,
+  .todo-form,
+  .todo-item {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-header h1 {
+    font-size: 32px;
+  }
+
+  .todo-header {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .todo-count,
+  .add-button,
+  .delete-button {
+    width: 100%;
+  }
+
+  .add-button {
+    margin-top: 0;
+  }
+}
