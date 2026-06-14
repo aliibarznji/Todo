@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 export default function TodoApp() {
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState([]);
 
 
   const {
